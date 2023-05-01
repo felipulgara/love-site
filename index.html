@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi Página Web</title>
+	<style>
+		body {
+			background-color: pink;
+            margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+
+        .form-group {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+		
+		input[type="text"], input[type="submit"] {
+			background-color: lightblue;
+			color: black;
+			font-size: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin: 10px;
+		}
+		
+		input[type="submit"] {
+			background-color: lightgreen;
+			cursor: pointer;
+		}
+
+		#mensaje {
+			display: none;
+			color: red;
+			font-size: 24px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>JAVIERA.COM</h1>
+	<form>
+		<div class="form-group">
+            <label for="numero">Ingresa tu código mi amorcito 😘:</label>
+            <input type="text" id="numero" name="numero">
+        </div>
+        <input type="submit" value="Ingresar 🫣">
+	</form>
+	
+	<div id="mensaje"></div>
+
+	<script>
+		const mensaje = document.querySelector('#mensaje');
+		document.querySelector('form').addEventListener('submit', (event) => {
+			event.preventDefault();
+			const numero = document.querySelector('#numero').value;
+			if (numero === '12031809') {
+				mensaje.textContent = 'Muy bien mi amor!!! ❤️ ingresaste el código correcto, tu siguiente pista la verás dentro del congelador 🥶';
+				mensaje.style.display = 'block';
+			} else {
+                mensaje.textContent = 'Código incorrecto!';
+				mensaje.style.display = 'block';
+            }
+		});
+	</script>
+</body>
+</html>
